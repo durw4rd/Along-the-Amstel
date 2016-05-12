@@ -16,6 +16,7 @@ RSpec.describe "posts/index.html.erb", type: :view do
 
     posts.each do |post|
       assert_select "h3", text: post.title, count: 1
+      assert_select "h4", text: post.subheader, count: 1
     end
   end
 
