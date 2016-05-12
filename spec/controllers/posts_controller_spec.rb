@@ -12,7 +12,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "GET #show" do
-    let(:posts) { create(:post) }
+    let(:post) { create(:post) }
 
     it "assigns the post to the inst variable @post[:id]" do
       get :show, id: post.to_param
