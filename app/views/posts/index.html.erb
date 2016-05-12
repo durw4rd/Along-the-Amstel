@@ -1,11 +1,13 @@
 <h1>Alongside the Amstel</h1>
 
-<%= @posts.each do |post| %>
+<% @posts.each do |post| %>
   <a href="<%= post_path post %>" class="summary">
     <%= image_tag(post.image.thumbnail.url, class: "thumbnail inline") %>
     <h2><%= post.title %></h2>
     <h3><%= post.subheader %></h3>
-    <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div>
+      <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
   </a>
 <% end %>
 
