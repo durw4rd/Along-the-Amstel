@@ -1,0 +1,35 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> Couldn't proceed your request:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form">
+    <div class="field">
+      <%= f.label :title %><br>
+      <%= f.text_field :title, placeholder: "Post Title" %>
+    </div>
+    <div class="field">
+      <%= f.label :subheader %><br>
+      <%= f.text_area :subheader, placeholder: "Add subtitle for homepage" %>
+    </div>
+    <div class="field">
+      <%= f.label :content %><br>
+      <%= f.text_area :content, placeholder: "Enter description...", rows: 8 %>
+    </div>
+    <p>
+      <%= f.label :image %><br>
+      <%= f.file_field :image %>
+    </p>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>

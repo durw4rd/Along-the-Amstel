@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   def index
     @posts = Post.all
   end
@@ -18,10 +19,14 @@ class PostsController < ApplicationController
   def create
     @post = Post.new( post_params )
 
-    if @post.save
-      redirect_to @post
-    else
-      render 'new'
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to @post }
+        format.json { render :show, status: :created, location: @post }
+      else
+        format.html { render :new }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -44,7 +49,11 @@ class PostsController < ApplicationController
 
   protected
 
+  def set_post
+    @post = Post.find( paramd[:id] )
+  end
+
   def post_params
-    params.require(:post).permit(:title, :subheader, :content)
+    params.require(:post).permit(:title, :subheader, :image, :content)
   end
 end
