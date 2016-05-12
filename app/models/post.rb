@@ -1,3 +1,5 @@
 class Post < ActiveRecord::Base
-  validates_presence_of :title
+  mount_uploader :image, ImageUploader
+
+  validates_presence_of :title, :image
 end
