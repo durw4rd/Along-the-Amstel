@@ -2,8 +2,13 @@
 
 <%= @posts.each do |post| %>
   <a href="<%= post_path post %>" class="summary">
-    <%= image_tag(post.image.thumbnail.url, :class => "thumbnail inline") %>
+    <%= image_tag(post.image.thumbnail.url, class: "thumbnail inline") %>
     <h2><%= post.title %></h2>
     <h3><%= post.subheader %></h3>
+    <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
   </a>
 <% end %>
+
+<br>
+
+<%= link_to 'Add Image', new_post_path %>
