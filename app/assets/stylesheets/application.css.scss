@@ -1,0 +1,13 @@
+@import "bourbon/bourbon";
+@import "posts.scss";
+
+button {
+  @include button;
+  border-radius: 0;
+  color: #E0E0E0;
+  font-weight: 300;
+  a {
+    color: #E0E0E0;
+    text-decoration: none;
+  }
+}
