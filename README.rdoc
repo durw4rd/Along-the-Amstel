@@ -1,28 +1,21 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project started in TDD environment, exploring the possibilities of Sass tools.
 
-Things you may want to cover:
+<h1>Stack</h1>
 
-* Ruby version
+The application was built using Ruby on Rails; Sass tool used: Bourbon (incl. Neat & Refills)
 
-* System dependencies
+<h1>Running the App</h1>
 
-* Configuration
+DB initialization:
 
-* Database creation
+<tt>rake db:create db:migrate</tt>
 
-* Database initialization
+Bundling
 
-* How to run the test suite
+<tt>bundle install</tt>
 
-* Services (job queues, cache servers, search engines, etc.)
+Start server
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+<tt>rails server</tt>
