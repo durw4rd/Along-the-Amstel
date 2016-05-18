@@ -2,11 +2,11 @@
 
 Project started in TDD environment, exploring the possibilities of Sass tools.
 
-<h1>Stack</h1>
+### Stack
 
 The application was built using Ruby on Rails; Sass tool used: Bourbon (incl. Neat & Refills)
 
-<h1>Running the App</h1>
+### Running the App
 
 DB initialization:
 
